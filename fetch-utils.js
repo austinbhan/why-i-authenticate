@@ -26,7 +26,12 @@ export async function signInUser(email, password) {
     }
 }
 
-export async function checkAuth() {}
+export async function checkAuth() {
+    const user = getUser();
+    if (!user) {
+        location.replace('/');
+    }
+}
 
 export async function redirectIfLoggedIn() {}
 

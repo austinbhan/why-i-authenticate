@@ -27,10 +27,7 @@ signInForm.addEventListener('submit', async (e) => {
     const data = new FormData(signInForm);
     console.log({ email: data.get('email'), password: data.get('password') });
     const user = await signInUser(data.get('email'), data.get('password'));
-    if (!user) {
-        location.replace('/');
-    }
-    else {
+    if (user) {
         location.replace('../other-page');
     }
 });
