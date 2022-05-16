@@ -33,7 +33,12 @@ export async function checkAuth() {
     }
 }
 
-export async function redirectIfLoggedIn() {}
+export async function redirectIfLoggedIn() {
+    const user = getUser();
+    if (user) {
+        location.replace('./other-page');
+    }
+}
 
 export async function logOut() {
     await client.auth.signOut();
